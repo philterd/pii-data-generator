@@ -45,6 +45,35 @@ String ssn = generator.ssn().random();
 String customId = generator.customId("ABC-123").random();
 ```
 
+## Generating CSV Data
+
+You can also generate CSV files of fake data:
+
+```java
+DataGenerator generator = new DefaultDataGenerator();
+
+CsvGenerator csvGenerator = new CsvGenerator()
+    .addColumn("First Name", generator.firstNames())
+    .addColumn("Last Name", generator.surnames())
+    .addColumn("SSN", generator.ssn());
+
+try (Writer writer = new FileWriter("data.csv")) {
+    csvGenerator.generate(writer, 100);
+}
+```
+
+### Options
+
+You can customize the CSV output:
+
+```java
+CsvGenerator csvGenerator = new CsvGenerator()
+    .withDelimiter("|")
+    .withQuotes(true)
+    .addColumn("First Name", generator.firstNames())
+    .addColumn("Last Name", generator.surnames());
+```
+
 ## Building
 
 Build the project using Maven:
