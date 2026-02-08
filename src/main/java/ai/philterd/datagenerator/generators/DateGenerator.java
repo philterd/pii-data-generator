@@ -17,12 +17,13 @@ package ai.philterd.datagenerator.generators;
 
 import ai.philterd.datagenerator.DataGenerator;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Random;
 
 public class DateGenerator implements DataGenerator.Generator<String> {
     private final Random random;
-    private final int minYear;
-    private final int maxYear;
+    private final LocalDate startDate;
+    private final long days;
 
     public DateGenerator(final Random random) {
         this(random, 1970, 2030);
@@ -30,19 +31,19 @@ public class DateGenerator implements DataGenerator.Generator<String> {
 
     public DateGenerator(final Random random, final int minYear, final int maxYear) {
         this.random = random;
-        this.minYear = minYear;
-        this.maxYear = maxYear;
+        this.startDate = LocalDate.of(minYear, 1, 1);
+        final LocalDate endDate = LocalDate.of(maxYear, 1, 1);
+        this.days = ChronoUnit.DAYS.between(startDate, endDate);
     }
 
     @Override
     public String random() {
-        final int year = minYear + random.nextInt(maxYear - minYear);
-        final int dayOfYear = 1 + random.nextInt(365);
-        return LocalDate.ofYearDay(year, dayOfYear).toString();
+        return startDate.plusDays(random.nextInt((int) days)).toString();
     }
 
     @Override
     public long poolSize() {
-        return (long) (maxYear - minYear) * 365L;
+        return days;
     }
+
 }

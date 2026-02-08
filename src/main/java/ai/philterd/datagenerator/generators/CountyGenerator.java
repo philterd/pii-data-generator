@@ -36,4 +36,5 @@ public class CountyGenerator extends AbstractGenerator<String> {
     public long poolSize() {
         return counties.size();
     }
+
 }

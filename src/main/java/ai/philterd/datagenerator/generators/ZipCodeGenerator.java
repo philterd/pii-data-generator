@@ -34,4 +34,5 @@ public class ZipCodeGenerator implements DataGenerator.Generator<String> {
     public long poolSize() {
         return 100000L;
     }
+
 }

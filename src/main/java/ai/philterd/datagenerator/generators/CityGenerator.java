@@ -36,4 +36,5 @@ public class CityGenerator extends AbstractGenerator<String> {
     public long poolSize() {
         return cities.size();
     }
+
 }

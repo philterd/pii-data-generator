@@ -39,4 +39,5 @@ public class VINGenerator implements DataGenerator.Generator<String> {
     public long poolSize() {
         return Long.MAX_VALUE;
     }
+
 }

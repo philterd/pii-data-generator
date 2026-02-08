@@ -34,4 +34,5 @@ public class BankRoutingNumberGenerator implements DataGenerator.Generator<Strin
     public long poolSize() {
         return 1000000000L;
     }
+
 }

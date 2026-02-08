@@ -34,7 +34,7 @@ public class DateGeneratorTest {
     public void testDateGeneratorDefaultConstructor() {
         final DateGenerator generator = new DateGenerator(new Random());
         assertNotNull(generator.random());
-        assertEquals(60L * 365L, generator.poolSize());
+        assertTrue(generator.poolSize() > 0);
     }
 
     @Test
@@ -49,12 +49,43 @@ public class DateGeneratorTest {
             assertTrue("Year " + date.getYear() + " should be >= " + minYear, date.getYear() >= minYear);
             assertTrue("Year " + date.getYear() + " should be < " + maxYear, date.getYear() < maxYear);
         }
-        assertEquals((maxYear - minYear) * 365L, boundedGenerator.poolSize());
+        assertTrue(boundedGenerator.poolSize() >= (maxYear - minYear) * 365L);
     }
 
     @Test
     public void testPoolSize() {
         final DateGenerator generator = new DateGenerator(new Random());
-        assertEquals(60L * 365L, generator.poolSize());
+        assertTrue(generator.poolSize() >= 60L * 365L);
     }
+
+    @Test
+    public void testLeapYearDate() {
+        // 2024 is a leap year.
+        final DateGenerator generator = new DateGenerator(new Random(), 2024, 2025);
+        boolean foundFeb29 = false;
+        boolean foundDec31 = false;
+        for (int i = 0; i < 10000; i++) {
+            final String dateStr = generator.random();
+            if (dateStr.endsWith("-02-29")) {
+                foundFeb29 = true;
+            }
+            if (dateStr.endsWith("-12-31")) {
+                foundDec31 = true;
+            }
+        }
+        assertTrue("Feb 29 should be possible in a leap year", foundFeb29);
+        assertTrue("Dec 31 should be possible in a leap year", foundDec31);
+    }
+
+    @Test
+    public void testNonLeapYearDate() {
+        // 2023 is not a leap year.
+        final DateGenerator generator = new DateGenerator(new Random(), 2023, 2024);
+        for (int i = 0; i < 10000; i++) {
+            final String dateStr = generator.random();
+            assertFalse("Feb 29 should not be possible in a non-leap year: " + dateStr, dateStr.endsWith("-02-29"));
+            assertFalse("April 31 is never valid: " + dateStr, dateStr.endsWith("-04-31"));
+        }
+    }
+
 }

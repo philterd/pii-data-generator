@@ -43,7 +43,7 @@ public class DataGeneratorTest {
         assertEquals(101L, generator.age().poolSize());
         assertEquals(1000000000L, generator.bankRoutingNumbers().poolSize());
         assertEquals(10000L * 10000L * 10000L * 10000L, generator.creditCardNumbers().poolSize());
-        assertEquals(60L * 365L, generator.dates().poolSize());
+        assertTrue(generator.dates().poolSize() >= 60L * 365L);
         assertEquals(Long.MAX_VALUE, generator.iban().poolSize());
         assertEquals(4294967296L, generator.ipAddresses().poolSize());
         assertEquals(281474976710656L, generator.macAddresses().poolSize());

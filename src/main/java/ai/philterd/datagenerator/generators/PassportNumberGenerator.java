@@ -34,4 +34,5 @@ public class PassportNumberGenerator implements DataGenerator.Generator<String> 
     public long poolSize() {
         return 26L * 100000000L;
     }
+
 }

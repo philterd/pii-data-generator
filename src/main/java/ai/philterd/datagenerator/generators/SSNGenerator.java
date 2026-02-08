@@ -37,4 +37,5 @@ public class SSNGenerator implements DataGenerator.Generator<String> {
     public long poolSize() {
         return 900L * 100L * 10000L;
     }
+
 }

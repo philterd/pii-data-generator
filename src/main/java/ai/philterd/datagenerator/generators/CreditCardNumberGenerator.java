@@ -84,4 +84,5 @@ public class CreditCardNumberGenerator implements DataGenerator.Generator<String
         }
         return 10000L * 10000L * 10000L * 10000L; // 10^16
     }
+
 }

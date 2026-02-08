@@ -43,4 +43,5 @@ public class StateAbbreviationGenerator implements DataGenerator.Generator<Strin
     public long poolSize() {
         return abbreviations.size();
     }
+
 }

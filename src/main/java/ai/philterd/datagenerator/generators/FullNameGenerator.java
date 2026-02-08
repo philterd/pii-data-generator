@@ -35,4 +35,5 @@ public class FullNameGenerator implements DataGenerator.Generator<String> {
     public long poolSize() {
         return firstNames.poolSize() * surnames.poolSize();
     }
+
 }

@@ -47,4 +47,5 @@ public class URLGenerator implements DataGenerator.Generator<String> {
     public long poolSize() {
         return protocols.length * firstNames.poolSize() * 100L * extensions.length;
     }
+
 }

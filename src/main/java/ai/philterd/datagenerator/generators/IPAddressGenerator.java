@@ -35,4 +35,5 @@ public class IPAddressGenerator implements DataGenerator.Generator<String> {
     public long poolSize() {
         return 256L * 256L * 256L * 256L;
     }
+
 }

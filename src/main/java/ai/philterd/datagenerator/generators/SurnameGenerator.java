@@ -36,4 +36,5 @@ public class SurnameGenerator extends AbstractGenerator<String> {
     public long poolSize() {
         return surnames.size();
     }
+
 }
