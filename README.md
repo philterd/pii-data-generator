@@ -1,10 +1,11 @@
-# data-generator
+# PII Data Generator
 
 A Java library for generating fake PII data of various types.
 
 ## Features
 
 The `data-generator` library provides methods to generate:
+
 - **Names**: First names, surnames, and full names (loaded from external resource files)
 - **SSNs**: Random Social Security Numbers in XXX-XX-XXXX format
 - **Phone Numbers**: Random US phone numbers in (XXX) XXX-XXXX format
