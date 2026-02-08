@@ -18,10 +18,17 @@ package ai.philterd.datagenerator.generators;
 import ai.philterd.datagenerator.DataGenerator;
 import java.util.Random;
 
+/**
+ * Generates random driver's license numbers.
+ */
 public class DriversLicenseGenerator implements DataGenerator.Generator<String> {
 
     private final Random random;
 
+    /**
+     * Creates a new driver's license generator.
+     * @param random The {@link Random} to use.
+     */
     public DriversLicenseGenerator(final Random random) {
         this.random = random;
     }

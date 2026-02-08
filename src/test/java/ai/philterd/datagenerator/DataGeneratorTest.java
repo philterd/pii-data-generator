@@ -131,4 +131,12 @@ public class DataGeneratorTest {
         }
     }
 
+    @Test
+    public void testDatesWithPattern() {
+        final String pattern = "MM-dd-yyyy";
+        final String date = generator.dates(pattern).random();
+        assertNotNull(date);
+        assertTrue(date.matches("\\d{2}-\\d{2}-\\d{4}"));
+    }
+
 }

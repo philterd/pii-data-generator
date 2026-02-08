@@ -18,10 +18,18 @@ package ai.philterd.datagenerator.generators;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Generates random city names.
+ */
 public class CityGenerator extends AbstractGenerator<String> {
     private final List<String> cities;
     private final Random random;
 
+    /**
+     * Creates a new city generator.
+     * @param cities A list of cities.
+     * @param random The {@link Random} to use.
+     */
     public CityGenerator(final List<String> cities, final Random random) {
         this.cities = cities;
         this.random = random;

@@ -17,15 +17,27 @@ package ai.philterd.datagenerator.generators;
 
 import java.util.Random;
 
+/**
+ * Generates custom IDs based on a pattern.
+ */
 public class CustomIdGenerator extends AbstractGenerator<String> {
 
     private final Random random;
     private final String pattern;
 
+    /**
+     * Creates a new custom ID generator.
+     * @param pattern The pattern to use for generation.
+     */
     public CustomIdGenerator(final String pattern) {
         this(new Random(), pattern);
     }
 
+    /**
+     * Creates a new custom ID generator.
+     * @param random The {@link Random} to use.
+     * @param pattern The pattern to use for generation.
+     */
     public CustomIdGenerator(final Random random, final String pattern) {
         this.random = random;
         this.pattern = pattern;

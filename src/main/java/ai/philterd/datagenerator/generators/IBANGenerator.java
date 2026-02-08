@@ -18,9 +18,16 @@ package ai.philterd.datagenerator.generators;
 import ai.philterd.datagenerator.DataGenerator;
 import java.util.Random;
 
+/**
+ * Generates random IBANs.
+ */
 public class IBANGenerator implements DataGenerator.Generator<String> {
     private final Random random;
 
+    /**
+     * Creates a new IBAN generator.
+     * @param random The {@link Random} to use.
+     */
     public IBANGenerator(final Random random) {
         this.random = random;
     }

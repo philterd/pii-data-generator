@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * Generator for creating fake PII data including names, SSNs, phone numbers, and email addresses.
+ * Default implementation of {@link DataGenerator}.
  */
 public class DefaultDataGenerator extends AbstractGenerator<Object> implements DataGenerator {
 
@@ -30,31 +30,134 @@ public class DefaultDataGenerator extends AbstractGenerator<Object> implements D
     private final List<String> surnamesList;
     private final Random random;
 
+    /**
+     * Generator for first names.
+     */
     public final Generator<String> firstNames;
+
+    /**
+     * Generator for surnames.
+     */
     public final Generator<String> surnames;
+
+    /**
+     * Generator for full names.
+     */
     public final Generator<String> fullNames;
+
+    /**
+     * Generator for SSNs.
+     */
     public final Generator<String> ssn;
+
+    /**
+     * Generator for phone numbers.
+     */
     public final Generator<String> phoneNumbers;
+
+    /**
+     * Generator for email addresses.
+     */
     public final Generator<String> emailAddresses;
+
+    /**
+     * Generator for age.
+     */
     public final Generator<Integer> age;
+
+    /**
+     * Generator for bank routing numbers.
+     */
     public final Generator<String> bankRoutingNumbers;
+
+    /**
+     * Generator for credit card numbers.
+     */
     public final Generator<String> creditCardNumbers;
+
+    /**
+     * Generator for dates.
+     */
     public final Generator<String> dates;
+
+    /**
+     * Generator for IBANs.
+     */
     public final Generator<String> iban;
+
+    /**
+     * Generator for IP addresses.
+     */
     public final Generator<String> ipAddresses;
+
+    /**
+     * Generator for MAC addresses.
+     */
     public final Generator<String> macAddresses;
+
+    /**
+     * Generator for passport numbers.
+     */
     public final Generator<String> passportNumbers;
+
+    /**
+     * Generator for states.
+     */
     public final Generator<String> states;
+
+    /**
+     * Generator for state abbreviations.
+     */
     public final Generator<String> stateAbbreviations;
+
+    /**
+     * Generator for zip codes.
+     */
     public final Generator<String> zipCodes;
+
+    /**
+     * Generator for Bitcoin addresses.
+     */
     public final Generator<String> bitcoinAddresses;
+
+    /**
+     * Generator for VINs.
+     */
     public final Generator<String> vin;
+
+    /**
+     * Generator for URLs.
+     */
     public final Generator<String> urls;
+
+    /**
+     * Generator for driver's license numbers.
+     */
     public final Generator<String> driversLicenseNumbers;
+
+    /**
+     * Generator for hospitals.
+     */
     public final Generator<String> hospitals;
+
+    /**
+     * Generator for hospital abbreviations.
+     */
     public final Generator<String> hospitalAbbreviations;
+
+    /**
+     * Generator for tracking numbers.
+     */
     public final Generator<String> trackingNumbers;
+
+    /**
+     * Generator for cities.
+     */
     public final Generator<String> cities;
+
+    /**
+     * Generator for counties.
+     */
     public final Generator<String> counties;
 
     /**
@@ -130,6 +233,7 @@ public class DefaultDataGenerator extends AbstractGenerator<Object> implements D
     @Override public Generator<String> cities() { return cities; }
     @Override public Generator<String> counties() { return counties; }
     @Override public Generator<String> customId(final String pattern) { return new CustomIdGenerator(random, pattern); }
+    @Override public Generator<String> dates(final String pattern) { return new DateGenerator(random, 1970, 2030, pattern); }
 
     @Override
     public Object random() {

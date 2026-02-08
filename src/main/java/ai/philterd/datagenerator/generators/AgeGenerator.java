@@ -18,9 +18,16 @@ package ai.philterd.datagenerator.generators;
 import ai.philterd.datagenerator.DataGenerator;
 import java.util.Random;
 
+/**
+ * Generates random ages.
+ */
 public class AgeGenerator implements DataGenerator.Generator<Integer> {
     private final Random random;
 
+    /**
+     * Creates a new age generator.
+     * @param random The {@link Random} to use.
+     */
     public AgeGenerator(final Random random) {
         this.random = random;
     }

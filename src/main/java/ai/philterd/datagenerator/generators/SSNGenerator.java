@@ -18,9 +18,16 @@ package ai.philterd.datagenerator.generators;
 import ai.philterd.datagenerator.DataGenerator;
 import java.util.Random;
 
+/**
+ * Generates random Social Security Numbers (SSN).
+ */
 public class SSNGenerator implements DataGenerator.Generator<String> {
     private final Random random;
 
+    /**
+     * Creates a new SSN generator.
+     * @param random The {@link Random} to use.
+     */
     public SSNGenerator(final Random random) {
         this.random = random;
     }

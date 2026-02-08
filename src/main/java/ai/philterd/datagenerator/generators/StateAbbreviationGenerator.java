@@ -20,15 +20,27 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Generates random state abbreviations.
+ */
 public class StateAbbreviationGenerator implements DataGenerator.Generator<String> {
     private final Random random;
     private final List<String> abbreviations;
     private static final List<String> DEFAULT_ABBREVIATIONS = Arrays.asList("AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY");
 
+    /**
+     * Creates a new state abbreviation generator.
+     * @param random The {@link Random} to use.
+     */
     public StateAbbreviationGenerator(final Random random) {
         this(random, DEFAULT_ABBREVIATIONS);
     }
 
+    /**
+     * Creates a new state abbreviation generator.
+     * @param random The {@link Random} to use.
+     * @param abbreviations A list of state abbreviations.
+     */
     public StateAbbreviationGenerator(final Random random, final List<String> abbreviations) {
         this.random = random;
         this.abbreviations = abbreviations;

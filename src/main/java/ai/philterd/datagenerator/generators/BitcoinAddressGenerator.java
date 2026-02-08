@@ -18,10 +18,17 @@ package ai.philterd.datagenerator.generators;
 import ai.philterd.datagenerator.DataGenerator;
 import java.util.Random;
 
+/**
+ * Generates random Bitcoin addresses.
+ */
 public class BitcoinAddressGenerator implements DataGenerator.Generator<String> {
     private final Random random;
     private final String chars = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
 
+    /**
+     * Creates a new Bitcoin address generator.
+     * @param random The {@link Random} to use.
+     */
     public BitcoinAddressGenerator(final Random random) {
         this.random = random;
     }

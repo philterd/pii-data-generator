@@ -18,9 +18,16 @@ package ai.philterd.datagenerator.generators;
 import ai.philterd.datagenerator.DataGenerator;
 import java.util.Random;
 
+/**
+ * Generates random phone numbers.
+ */
 public class PhoneNumberGenerator implements DataGenerator.Generator<String> {
     private final Random random;
 
+    /**
+     * Creates a new phone number generator.
+     * @param random The {@link Random} to use.
+     */
     public PhoneNumberGenerator(final Random random) {
         this.random = random;
     }

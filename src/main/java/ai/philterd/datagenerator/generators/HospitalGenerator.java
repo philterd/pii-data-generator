@@ -19,20 +19,37 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Generates random hospital names.
+ */
 public class HospitalGenerator extends AbstractGenerator<String> {
 
     private final Random random;
     private final List<String> hospitals;
 
+    /**
+     * Creates a new hospital generator.
+     * @throws IOException if the hospital data cannot be loaded.
+     */
     public HospitalGenerator() throws IOException {
         this(new Random());
     }
 
+    /**
+     * Creates a new hospital generator.
+     * @param random The {@link Random} to use.
+     * @throws IOException if the hospital data cannot be loaded.
+     */
     public HospitalGenerator(final Random random) throws IOException {
         this.random = random;
         this.hospitals = loadNames("/hospitals.txt");
     }
 
+    /**
+     * Creates a new hospital generator.
+     * @param hospitals A list of hospital names.
+     * @param random The {@link Random} to use.
+     */
     public HospitalGenerator(final List<String> hospitals, final Random random) {
         this.random = random;
         this.hospitals = hospitals;

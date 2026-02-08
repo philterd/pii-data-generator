@@ -18,10 +18,18 @@ package ai.philterd.datagenerator.generators;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Generates random first names.
+ */
 public class FirstNameGenerator extends AbstractGenerator<String> {
     private final List<String> firstNames;
     private final Random random;
 
+    /**
+     * Creates a new first name generator.
+     * @param firstNames A list of first names.
+     * @param random The {@link Random} to use.
+     */
     public FirstNameGenerator(final List<String> firstNames, final Random random) {
         this.firstNames = firstNames;
         this.random = random;

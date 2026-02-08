@@ -18,10 +18,18 @@ package ai.philterd.datagenerator.generators;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Generates random surnames.
+ */
 public class SurnameGenerator extends AbstractGenerator<String> {
     private final List<String> surnames;
     private final Random random;
 
+    /**
+     * Creates a new surname generator.
+     * @param surnames A list of surnames.
+     * @param random The {@link Random} to use.
+     */
     public SurnameGenerator(final List<String> surnames, final Random random) {
         this.surnames = surnames;
         this.random = random;

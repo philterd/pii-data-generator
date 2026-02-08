@@ -18,10 +18,17 @@ package ai.philterd.datagenerator.generators;
 import ai.philterd.datagenerator.DataGenerator;
 import java.util.Random;
 
+/**
+ * Generates random Vehicle Identification Numbers (VIN).
+ */
 public class VINGenerator implements DataGenerator.Generator<String> {
     private final Random random;
     private final String chars = "0123456789ABCDEFGHJKLMNPRSTUVWXYZ";
 
+    /**
+     * Creates a new VIN generator.
+     * @param random The {@link Random} to use.
+     */
     public VINGenerator(final Random random) {
         this.random = random;
     }

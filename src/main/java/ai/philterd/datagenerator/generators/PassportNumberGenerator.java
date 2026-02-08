@@ -18,9 +18,16 @@ package ai.philterd.datagenerator.generators;
 import ai.philterd.datagenerator.DataGenerator;
 import java.util.Random;
 
+/**
+ * Generates random passport numbers.
+ */
 public class PassportNumberGenerator implements DataGenerator.Generator<String> {
     private final Random random;
 
+    /**
+     * Creates a new passport number generator.
+     * @param random The {@link Random} to use.
+     */
     public PassportNumberGenerator(final Random random) {
         this.random = random;
     }

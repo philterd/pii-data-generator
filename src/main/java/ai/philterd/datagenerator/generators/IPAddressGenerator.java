@@ -18,9 +18,16 @@ package ai.philterd.datagenerator.generators;
 import ai.philterd.datagenerator.DataGenerator;
 import java.util.Random;
 
+/**
+ * Generates random IP addresses.
+ */
 public class IPAddressGenerator implements DataGenerator.Generator<String> {
     private final Random random;
 
+    /**
+     * Creates a new IP address generator.
+     * @param random The {@link Random} to use.
+     */
     public IPAddressGenerator(final Random random) {
         this.random = random;
     }

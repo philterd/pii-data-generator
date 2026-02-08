@@ -17,10 +17,18 @@ package ai.philterd.datagenerator.generators;
 
 import ai.philterd.datagenerator.DataGenerator;
 
+/**
+ * Generates random full names.
+ */
 public class FullNameGenerator implements DataGenerator.Generator<String> {
     private final DataGenerator.Generator<String> firstNames;
     private final DataGenerator.Generator<String> surnames;
 
+    /**
+     * Creates a new full name generator.
+     * @param firstNames A first name generator.
+     * @param surnames A surname generator.
+     */
     public FullNameGenerator(final DataGenerator.Generator<String> firstNames, final DataGenerator.Generator<String> surnames) {
         this.firstNames = firstNames;
         this.surnames = surnames;

@@ -18,6 +18,9 @@ package ai.philterd.datagenerator.generators;
 import ai.philterd.datagenerator.DataGenerator;
 import java.util.Random;
 
+/**
+ * Generates random URLs.
+ */
 public class URLGenerator implements DataGenerator.Generator<String> {
     private final DataGenerator.Generator<String> firstNames;
     private final Random random;
@@ -26,10 +29,22 @@ public class URLGenerator implements DataGenerator.Generator<String> {
     private static final String[] DEFAULT_PROTOCOLS = {"http", "https"};
     private static final String[] DEFAULT_EXTENSIONS = {"com", "org", "net", "io", "gov"};
 
+    /**
+     * Creates a new URL generator.
+     * @param firstNames A generator for first names.
+     * @param random The {@link Random} to use.
+     */
     public URLGenerator(final DataGenerator.Generator<String> firstNames, final Random random) {
         this(firstNames, random, DEFAULT_PROTOCOLS, DEFAULT_EXTENSIONS);
     }
 
+    /**
+     * Creates a new URL generator.
+     * @param firstNames A generator for first names.
+     * @param random The {@link Random} to use.
+     * @param protocols A list of protocols.
+     * @param extensions A list of extensions.
+     */
     public URLGenerator(final DataGenerator.Generator<String> firstNames, final Random random, final String[] protocols, final String[] extensions) {
         this.firstNames = firstNames;
         this.random = random;

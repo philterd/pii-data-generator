@@ -19,20 +19,37 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Generates random hospital abbreviations.
+ */
 public class HospitalAbbreviationGenerator extends AbstractGenerator<String> {
 
     private final Random random;
     private final List<String> hospitals;
 
+    /**
+     * Creates a new hospital abbreviation generator.
+     * @throws IOException if the hospital data cannot be loaded.
+     */
     public HospitalAbbreviationGenerator() throws IOException {
         this(new Random());
     }
 
+    /**
+     * Creates a new hospital abbreviation generator.
+     * @param random The {@link Random} to use.
+     * @throws IOException if the hospital data cannot be loaded.
+     */
     public HospitalAbbreviationGenerator(final Random random) throws IOException {
         this.random = random;
         this.hospitals = loadNames("/hospitals.txt");
     }
 
+    /**
+     * Creates a new hospital abbreviation generator.
+     * @param hospitals A list of hospital names.
+     * @param random The {@link Random} to use.
+     */
     public HospitalAbbreviationGenerator(final List<String> hospitals, final Random random) {
         this.random = random;
         this.hospitals = hospitals;

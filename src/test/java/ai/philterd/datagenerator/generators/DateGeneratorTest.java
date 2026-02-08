@@ -88,4 +88,13 @@ public class DateGeneratorTest {
         }
     }
 
+    @Test
+    public void testCustomDateFormat() {
+        final String pattern = "MM/dd/yyyy";
+        final DateGenerator generator = new DateGenerator(new Random(), 2020, 2021, pattern);
+        final String date = generator.random();
+        assertNotNull(date);
+        assertTrue(date.matches("\\d{2}/\\d{2}/\\d{4}"));
+    }
+
 }

@@ -18,14 +18,26 @@ package ai.philterd.datagenerator.generators;
 import ai.philterd.datagenerator.DataGenerator;
 import java.util.Random;
 
+/**
+ * Generates random credit card numbers.
+ */
 public class CreditCardNumberGenerator implements DataGenerator.Generator<String> {
     private final Random random;
     private final boolean valid;
 
+    /**
+     * Creates a new credit card number generator.
+     * @param random The {@link Random} to use.
+     */
     public CreditCardNumberGenerator(final Random random) {
         this(random, false);
     }
 
+    /**
+     * Creates a new credit card number generator.
+     * @param random The {@link Random} to use.
+     * @param valid If <code>true</code>, the generated numbers will pass Luhn validation.
+     */
     public CreditCardNumberGenerator(final Random random, final boolean valid) {
         this.random = random;
         this.valid = valid;

@@ -23,8 +23,18 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Base class for data generators.
+ * @param <T> The type of data generated.
+ */
 public abstract class AbstractGenerator<T> implements DataGenerator.Generator<T> {
 
+    /**
+     * Loads names from a resource file.
+     * @param resourcePath The path to the resource file.
+     * @return A list of names.
+     * @throws IOException if the resource file cannot be read.
+     */
     protected List<String> loadNames(final String resourcePath) throws IOException {
         final List<String> names = new ArrayList<>();
         try (final InputStream is = getClass().getResourceAsStream(resourcePath)) {
