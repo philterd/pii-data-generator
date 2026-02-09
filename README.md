@@ -2,6 +2,8 @@
 
 A Java library for generating fake PII data of various types.
 
+This code is similar to the code used by [Phileas](https://www.github.com/philterd/phileas) but is not the exact same code.
+
 ## Features
 
 The `data-generator` library provides methods to generate:
